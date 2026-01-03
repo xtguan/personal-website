@@ -1,9 +1,9 @@
 import React from 'react'
 
 const images = [
-  '/photos/sample1.jpg',
-  '/photos/sample2.jpg',
-  '/photos/sample3.jpg'
+  '/photos/sample1.svg',
+  '/photos/sample2.svg',
+  '/photos/sample3.svg'
 ]
 
 export default function Gallery(){
