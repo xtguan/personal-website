@@ -1,4 +1,4 @@
-import t from"./tampa-clearwater-beach-1-iv9jOjxA.js";const o=`
+import t from"./tampa-clearwater-beach-1-C_dmQF8q.js";const o=`
 # My First Blog Post
 
 This is a sample blog post about a coastal trip.
