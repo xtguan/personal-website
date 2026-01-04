@@ -1,9 +1,9 @@
 import React from 'react'
 
-// Auto-load images placed in `src/assets/photos` using Vite's glob import.
-// To add photos, put them into `src/assets/photos/` (jpg/png/svg) and they
+// Auto-load images placed in `src/photos` using Vite's glob import.
+// To add photos, put them into `src/photos/` (jpg/png/svg) and they
 // will automatically appear in the gallery.
-const modules = import.meta.globEager('../assets/photos/*.{jpg,jpeg,png,svg}')
+const modules = import.meta.globEager('../photos/*.{jpg,jpeg,png,svg}')
 const images = Object.values(modules).map(m => m.default)
 
 export default function Gallery(){
