@@ -27,9 +27,9 @@ Deploy to GitHub Pages (two common options)
 
 Option A — Repository pages (recommended for project sites)
 
-- Create a GitHub repo (for example `personal-website`) and push this code to it.
+-- Create a GitHub repo (for example `diary`) and push this code to it.
 - In `package.json` the `deploy` script uses `gh-pages` (already included). Install it locally: `npm install --save-dev gh-pages`.
-- Update `vite.config.js` `base` if your site will be served from a subpath. Example: `base: '/personal-website/'`.
+- Update `vite.config.js` `base` if your site will be served from a subpath. Example: `base: '/diary/'`.
 - Run:
 
 ```bash
@@ -37,14 +37,14 @@ npm run predeploy
 npm run deploy
 ```
 
-This will push the `dist` folder to the `gh-pages` branch and publish the site at `https://<yourusername>.github.io/personal-website/`.
+This will push the `dist` folder to the `gh-pages` branch and publish the site at `https://<yourusername>.github.io/diary/`.
 
 Option B — User/Organization site (`<username>.github.io`)
 
 - Create a GitHub repository named exactly `<yourusername>.github.io`.
 - Build the site (`npm run build`).
 - Push the contents of the `dist` folder to the `main` branch root of the repository (or configure a GitHub Action to do it).
-- The site will be available at `https://<yourusername>.github.io/`.
+- The site will be available at `https://<yourusername>.github.io/diary/`.
 
 Notes and next steps
 

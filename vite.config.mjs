@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(({ mode }) => {
   const isProd = mode === 'production'
   return {
-    base: process.env.VITE_BASE || (isProd ? '/personal-website/' : '/'),
+    base: process.env.VITE_BASE || (isProd ? '/diary/' : '/'),
     plugins: [react()],
     // In development, bind to all interfaces so localhost resolves on IPv4 and IPv6
     server: isProd ? undefined : { host: true }
