@@ -1,8 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Base path for GitHub Pages deployment. Change VITE_BASE to override.
-export default defineConfig({
-  base: process.env.VITE_BASE || '/personal-website/',
-  plugins: [react()]
+// Use a different base in development so localhost serves at '/'.
+export default defineConfig(({ mode }) => {
+  const isProd = mode === 'production'
+  return {
+    base: process.env.VITE_BASE || (isProd ? '/personal-website/' : '/'),
+    plugins: [react()]
+  }
 })
