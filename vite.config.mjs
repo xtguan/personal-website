@@ -6,6 +6,8 @@ export default defineConfig(({ mode }) => {
   const isProd = mode === 'production'
   return {
     base: process.env.VITE_BASE || (isProd ? '/personal-website/' : '/'),
-    plugins: [react()]
+    plugins: [react()],
+    // In development, bind to all interfaces so localhost resolves on IPv4 and IPv6
+    server: isProd ? undefined : { host: true }
   }
 })
