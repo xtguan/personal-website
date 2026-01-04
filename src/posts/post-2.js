@@ -1,11 +1,11 @@
-import thumb from '../photos/photo2.svg'
+import thumb from '../photos/tampa-ybor-1.jpg'
 
 const content = `
 # A Travel Story
 
 Short travel story sample content with a city photo.
 
-![city](/src/photos/photo2.svg)
+![city](/src/photos/tampa-ybor-1.jpg)
 
 More details about the trip.
 `

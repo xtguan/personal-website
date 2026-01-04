@@ -5,8 +5,8 @@ export default function Contact(){
     <section id="contact" className="card">
       <h2>Contact</h2>
       <p className="muted">Get in touch via email or follow on social media.</p>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>Social: <a href="https://github.com/yourusername" target="_blank">GitHub</a> · <a href="#">LinkedIn</a> · <a href="#">Instagram</a></p>
+      <p>Email: <a href="mailto:eva.xiaotang.guan@gmail.com">eva.xiaotang.guan@gmail.com</a></p>
+      <p>Social: <a href="https://github.com/xtguan" target="_blank" rel="noopener">GitHub</a> · <a href="#">LinkedIn</a> · <a href="#">Instagram</a></p>
     </section>
   )
 }
