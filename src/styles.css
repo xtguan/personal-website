@@ -41,3 +41,13 @@ footer{padding:18px 0;text-align:center;color:var(--muted)}
 	.tabs{flex-wrap:wrap;gap:6px}
 	.tab{padding:8px 10px}
 }
+
+/* Modal overlay for gallery */
+.modal-overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:60}
+.modal-content{position:relative;background:linear-gradient(180deg,#ffffff,#fbfdfe);padding:18px;border-radius:10px;box-shadow:0 20px 40px rgba(2,6,23,0.3);max-width:95vw;max-height:90vh;overflow:auto}
+.modal-content .close-btn{position:absolute;top:10px;right:10px;background:rgba(2,6,23,0.04);border:0;color:var(--muted);cursor:pointer;font-weight:600;width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;transition:background 140ms ease,color 140ms ease}
+.modal-content .close-btn:hover{background:var(--accent);color:white}
+
+/* Reuse fade-in/out animations used elsewhere */
+.modal-overlay.fade-in{animation:fadeInUp 220ms ease}
+.modal-overlay.fade-out{animation:fadeOut 200ms ease forwards}
