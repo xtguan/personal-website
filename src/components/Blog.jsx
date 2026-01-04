@@ -1,12 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 
-// Import all post modules from src/posts
-const modules = import.meta.globEager('../posts/*.js')
-const posts = Object.values(modules).map(m => m.default).sort((a,b) => (b.date > a.date ? 1 : -1))
-
 export default function Blog(){
+  const [posts, setPosts] = useState([])
   const [selected, setSelected] = useState(null)
+
+  useEffect(() => {
+    // Dynamically import all post modules
+    const modules = import.meta.glob('../posts/*.js')
+    ;(async () => {
+      const entries = await Promise.all(
+        Object.entries(modules).map(async ([path, resolver]) => {
+          const mod = await resolver()
+          return mod.default
+        })
+      )
+      // sort by date desc
+      entries.sort((a,b) => (b.date > a.date ? 1 : -1))
+      setPosts(entries)
+    })()
+  }, [])
 
   return (
     <section id="blog" className="card">
