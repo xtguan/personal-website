@@ -51,3 +51,29 @@ Notes and next steps
 - Replace `Your Name`, contact info, and project details in `src/components`.
 - Add real images in `public/photos` (replace placeholders).
 - If you want to render markdown into styled HTML inside React, consider adding a small static site generator (e.g., mdx or building at compile-time).
+
+Adding blog posts
+
+- Blog posts live in `src/posts/` as JS modules that export an object with `title`, `date`, `thumbnail`, and `content` (see existing `post-1.js`).
+- To categorize posts, add a `category` field. Use one of the recommended values:
+	- `travel` — travel / trip posts
+	- `thoughts` — short essays, reflections, or sharing thoughts
+
+Example post template (`src/posts/new-post.js`):
+```javascript
+import thumb from '../photos/your-image.jpg'
+
+const content = `
+# Post title
+
+Write your post here in Markdown.
+`
+
+export default {
+	title: 'Post Title',
+	date: '2026-01-04',
+	category: 'thoughts', // or 'travel'
+	thumbnail: thumb,
+	content
+}
+```

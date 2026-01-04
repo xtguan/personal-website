@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown'
 export default function Blog(){
   const [posts, setPosts] = useState([])
   const [selected, setSelected] = useState(null)
+  const [category, setCategory] = useState('all')
 
   useEffect(() => {
     // Dynamically import all post modules
@@ -26,8 +27,14 @@ export default function Blog(){
       <h2>Blog</h2>
       <p className="muted">Short notes and longer posts. Click to read full posts.</p>
 
+      <div className="tabs">
+        <button className={`tab ${category === 'all' ? 'active' : ''}`} onClick={() => setCategory('all')}>All</button>
+        <button className={`tab ${category === 'travel' ? 'active' : ''}`} onClick={() => setCategory('travel')}>Travel</button>
+        <button className={`tab ${category === 'thoughts' ? 'active' : ''}`} onClick={() => setCategory('thoughts')}>Sharing Thoughts</button>
+      </div>
+
       <div className="projects-list">
-        {posts.map((p, i) => (
+        {posts.filter(p => category === 'all' || (p.category && p.category === category)).map((p, i) => (
           <article key={i} className="project" onClick={() => setSelected(p)} style={{cursor:'pointer'}}>
             <h3>{p.title}</h3>
             {p.thumbnail && <img src={p.thumbnail} alt={`thumb-${i}`} style={{width:'100%',height:120,objectFit:'cover',borderRadius:8}} />}

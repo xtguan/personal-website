@@ -30,3 +30,14 @@ footer{padding:18px 0;text-align:center;color:var(--muted)}
 .social a{margin:0 8px;color:var(--muted);text-decoration:none}
 
 @media (max-width:640px){.nav a{margin-left:10px}}
+
+/* Category tabs for Blog */
+.tabs{display:inline-flex;gap:8px;margin-top:12px;margin-bottom:8px}
+.tab{background:transparent;border:1px solid transparent;padding:8px 12px;border-radius:10px;cursor:pointer;color:var(--muted);transition:all 140ms ease;font-weight:600}
+.tab:hover{background:rgba(2,6,23,0.03);color:var(--accent)}
+.tab.active{background:#ffffff;border-color:rgba(2,6,23,0.06);box-shadow:0 6px 18px rgba(2,6,23,0.04);color:var(--accent);transform:translateY(-2px)}
+
+@media (max-width:480px){
+	.tabs{flex-wrap:wrap;gap:6px}
+	.tab{padding:8px 10px}
+}

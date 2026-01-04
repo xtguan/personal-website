@@ -13,6 +13,7 @@ More content here. Replace with your own writing.
 export default {
   title: 'My First Blog Post',
   date: '2026-01-03',
+  category: 'travel',
   thumbnail: thumb,
   content
 }
